@@ -20,6 +20,7 @@ fetch('https://beta.wasteof.money/users')
   })
  }, 2000)
 
+/* Pages */
 app.get('/', (req, res) => {
   res.send(parseHTML(`
 <span id="count" class="text-6xl block">${counted}</span>
@@ -38,10 +39,6 @@ setInterval(function(){
 }, 1000)
 </script>
 `, "home", req.cookies))
-});
-
-app.get('/count', (req, res) => {
-res.json({count: counted});
 });
 
 app.get('/users/:username', (req, res) => {
